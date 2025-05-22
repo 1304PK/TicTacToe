@@ -5,7 +5,7 @@
 }
 
 main{
-    background-color: #000000;
+    background-color: #1b263b;
     height: 100vmin;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ h1{
 }
 
 .container{
-    background-color: #14213d;
+    background-color: #778da9;
     height: 80vmin;
     width: 80vmax;
     display: flex;
@@ -27,6 +27,7 @@ h1{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    gap: 2rem;
 }
 
 .gameboard{
@@ -39,13 +40,25 @@ h1{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+
 }
 
 .box{
     height: 19vmin;
     width: 19vmin;
     border: none;
-    background-color: #fca311;
+    background-color: #415a77;
     border-radius: 10px;
-    color: ffffff;
+    color: #e0e1dd;
+    font-size: 8vmin;
+}
+
+.reset-button{
+    border: none;
+    background-color: #0d1b2a;
+    color: #e0e1dd;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    padding: 0.7rem 2.5rem;
+
 }
