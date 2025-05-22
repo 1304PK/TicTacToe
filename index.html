@@ -9,21 +9,19 @@
 <body>
     <main>
         <h1>Tic Tac Toe</h1>
-        <div class="container">
-            <div class="gameboard">
-                <button class="box">X</button>
-                <button class="box">O</button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
+        <div class="initial-container">
+            <div class="player">
+                <h2>Player 1(X)</h2>
+                <input type="text" placeholder="Name" id="player1-name">
             </div>
-
-            <button class="reset-button">Reset</button>
+            <button class="play-button">Play</button>
+            <div class="player">
+                <h2>Player 2(O)</h2>
+                <input type="text" placeholder="Name" id="player2-name">
+            </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
