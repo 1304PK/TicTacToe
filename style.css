@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-main{
+main {
     background-color: #1b263b;
     height: 100vmin;
     display: flex;
@@ -12,24 +12,23 @@ main{
 
 }
 
-h1{
+h1 {
     color: #ffffff;
     margin: 1.5rem 0rem;
 }
 
-.container{
+.container {
     background-color: #778da9;
     height: 80vmin;
     width: 80vmax;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    gap: 2rem;
+    gap: 7rem;
 }
 
-.gameboard{
+.gameboard {
 
     height: 60vmin;
     width: 60vmin;
@@ -42,7 +41,7 @@ h1{
 
 }
 
-.box{
+.box {
     height: 19vmin;
     width: 19vmin;
     border: none;
@@ -52,7 +51,7 @@ h1{
     font-size: 8vmin;
 }
 
-.reset-button{
+.reset-button {
     border: none;
     background-color: #0d1b2a;
     color: #e0e1dd;
@@ -62,14 +61,14 @@ h1{
 
 }
 
-.initial-container{
+.initial-container {
     background-color: #778da9;
     height: 80vmin;
     width: 80vmax;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
+    border-radius: 10px;
 }
 
 .player {
@@ -90,14 +89,14 @@ h1{
     font-size: 2rem;
 }
 
-.player input{
+.player input {
     padding: 0.5rem;
     font-size: 1.2rem;
     border: none;
     border-radius: 5px;
 }
 
-.play-button{
+.play-button {
     height: 18vmin;
     width: 18vmin;
     font-size: 2rem;
@@ -112,7 +111,19 @@ h1{
         box-shadow: 0px 0px 8px black;
     }
 
-    &:active{
+    &:active {
         opacity: 0.9;
     }
+}
+
+.gameboard-player-name {
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.winner-name {
+    position: absolute;
+    font-size: 2rem;
+    top: 7.5rem;
 }
