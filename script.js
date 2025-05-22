@@ -17,23 +17,40 @@ const winConditions = [
 ]
 
 
-function addGameBoard(){
+function addGameBoard() {
 
-    function disableBtns(){
+    function disableBtns() {
         buttons.forEach((button) => {
             button.disabled = true
         })
     }
 
-    
+
     container.innerHTML = ''
     container.classList.remove('initial-container')
     container.classList.add('container')
 
+    const player1Div = document.createElement('div')
+    player1Div.textContent = `${player1Name.value}(X)`
+    player1Div.classList.add('gameboard-player-name')
+    container.append(player1Div)
+
     const gameboardDiv = document.createElement('div')
     gameboardDiv.classList.add('gameboard')
     container.append(gameboardDiv)
-    for (let i = 1; i <= 9; i++){
+
+    const player2Div = document.createElement('div')
+    player2Div.textContent = `${player2Name.value}(O)`
+    player2Div.classList.add('gameboard-player-name')
+    container.append(player2Div)
+
+    const winnerName = document.createElement('h2')
+    winnerName.classList.add('winner-name')
+    winnerName.textContent = ''
+    gameboardDiv.append(winnerName)
+
+
+    for (let i = 1; i <= 9; i++) {
         const buttonElement = document.createElement('button')
         buttonElement.classList.add('box')
         gameboardDiv.append(buttonElement)
@@ -42,27 +59,33 @@ function addGameBoard(){
     const buttons = document.querySelectorAll('.box')
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
-            if(turnX === true){
+            if (turnX === true) {
                 button.textContent = 'X'
                 turnX = false
                 button.disabled = true
-                
+
             }
-            else{
+            else {
                 button.textContent = 'O'
                 turnX = true
                 button.disabled = true
             }
-    
+
             winConditions.forEach((array) => {
                 const first = buttons[array[0]].textContent
                 const second = buttons[array[1]].textContent
                 const third = buttons[array[2]].textContent
-    
-                if ((first === second && (first !== '' && second !== '')) && second === third && (second !== '' && third !== '')){
-                    console.log('win')
+
+                if ((first === second && (first !== '' && second !== '')) && second === third && (second !== '' && third !== '')) {
+                    if (first === 'X') {
+                        winnerName.textContent = `${player1Name.value} won`
+                    }
+                    else {
+                        winnerName.textContent = `${player2Name.value} won`
+                    }
+
                     disableBtns()
-                    
+
                 }
             })
         })
@@ -70,30 +93,23 @@ function addGameBoard(){
     const resetBtnElement = document.createElement('button')
     resetBtnElement.textContent = 'Reset'
     resetBtnElement.classList.add('reset-button')
-    container.append(resetBtnElement)
+    gameboardDiv.append(resetBtnElement)
 
 
     const resetBtn = document.querySelector('.reset-button')
     resetBtn.addEventListener("click", () => {
-
+        winnerName.textContent = ''
         buttons.forEach((button) => {
             button.textContent = ''
             button.disabled = false
         })
         turnX = true
-    
+
     })
-    
+
 }
 
 
-
-
 playBtn.addEventListener("click", () => {
-    console.log(player1Name.value + " " + player2Name.value)
     addGameBoard()
 })
-
-
-
-
