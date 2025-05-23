@@ -3,13 +3,14 @@
     padding: 0;
 }
 
+
 main {
     background-color: #1b263b;
     height: 100vmin;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    font-family: Helvetica;
 }
 
 h1 {
@@ -49,6 +50,7 @@ h1 {
     border-radius: 10px;
     color: #e0e1dd;
     font-size: 8vmin;
+    cursor: pointer;
 }
 
 .reset-button {
@@ -58,7 +60,11 @@ h1 {
     border-radius: 8px;
     font-size: 1.6rem;
     padding: 0.7rem 2.5rem;
+    cursor: pointer;
 
+    &:hover{
+        box-shadow: 0px 0px 5px white;
+    }
 }
 
 .initial-container {
