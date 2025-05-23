@@ -4,6 +4,9 @@ const player2Name = document.getElementById('player2-name')
 const container = document.querySelector('.initial-container')
 
 let turnX = true
+let emptybox = true
+let gameEnd = false
+let btnTextArray = []
 
 const winConditions = [
     [0, 1, 2],
@@ -83,12 +86,45 @@ function addGameBoard() {
                     else {
                         winnerName.textContent = `${player2Name.value} won`
                     }
-
+                    gameEnd = true
                     disableBtns()
+                }
+            })
+            buttons.forEach((boxes) => {
+                // if (boxes.textContent === ''){
+                //     console.log('wow')
+                //     emptybox = true
+                //     return emptybox   
+                // }
+                btnTextArray.push(boxes.textContent)
+                
+               
+    
+
+            })
+
+            if (btnTextArray.includes('')){
+                emptybox = true
+                btnTextArray = []
+            }
+            else{
+                emptybox = false
+
+            }
+
+            buttons.forEach(() => {
+                if (emptybox === false && gameEnd === false){
+                    disableBtns()
+                    winnerName.textContent = 'Game Tie'
+                    btnTextArray = []
+                    console.log('tie')
 
                 }
             })
         })
+
+        
+
     })
     const resetBtnElement = document.createElement('button')
     resetBtnElement.textContent = 'Reset'
@@ -104,7 +140,7 @@ function addGameBoard() {
             button.disabled = false
         })
         turnX = true
-
+        btnTextArray = []
     })
 
 }
